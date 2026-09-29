@@ -1,0 +1,59 @@
+# =========================
+# ASP.NET Core / .NET
+# =========================
+
+**/bin/
+**/obj/
+.vs/
+.idea/
+
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# ASP.NET Core local configuration
+CoreCampus-API/appsettings.Development.json
+CoreCampus-API/appsettings.Local.json
+
+# Logs
+CoreCampus-API/logs/
+**/*.log
+
+
+# =========================
+# Angular
+# =========================
+
+core-campus-ui/node_modules/
+core-campus-ui/dist/
+core-campus-ui/.angular/
+core-campus-ui/.cache/
+core-campus-ui/out-tsc/
+core-campus-ui/tmp/
+core-campus-ui/coverage/
+
+# Angular temporary files
+core-campus-ui/.sass-cache/
+core-campus-ui/.history/
+core-campus-ui/__screenshots__/
+core-campus-ui/npm-debug.log
+core-campus-ui/yarn-error.log
+core-campus-ui/testem.log
+
+
+# =========================
+# IDE
+# =========================
+
+core-campus-ui/.vscode/
+core-campus-ui/.idea/
+
+
+# =========================
+# OS
+# =========================
+
+.DS_Store
+Thumbs.db
+desktop.ini
