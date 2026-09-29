@@ -79,7 +79,7 @@ import { AuditNotificationService } from '../../../core/services/audit-notificat
       <!-- Printable Certificate Modal / Box -->
       <div *ngIf="previewCert" class="card border-2 border-secondary shadow p-5 bg-white text-dark">
         <div class="text-center border-bottom pb-4 mb-4">
-          <h2 class="fw-bold text-uppercase">Biju Patnaik University of Technology</h2>
+          <h2 class="fw-bold text-uppercase">Raajdhani Engineering College (Autonomous)</h2>
           <h5 class="text-muted">CAMPUS ONE CENTRAL ACADEMIC OFFICE</h5>
           <h4 class="mt-4 text-decoration-underline">{{ previewCert.type }}</h4>
         </div>

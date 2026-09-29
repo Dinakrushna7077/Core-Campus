@@ -14,7 +14,7 @@ import { User } from '../../../core/models/campus.models';
       <div class="card shadow-sm border-0 p-4" style="max-width: 420px; width: 100%;">
         <div class="text-center mb-4">
           <i class="bi bi-mortarboard-fill text-primary" style="font-size: 2.75rem;"></i>
-          <h3 class="fw-bold text-dark mt-2 mb-0">CampusOne</h3>
+          <h3 class="fw-bold text-dark mt-2 mb-0">Core Campus</h3>
           <p class="text-muted small">One Campus, One Digital Workflow</p>
         </div>
 
@@ -30,7 +30,7 @@ import { User } from '../../../core/models/campus.models';
               class="form-control"
               [(ngModel)]="email"
               name="email"
-              placeholder="e.g. student@campusone.demo"
+              placeholder="e.g. student@gmail.com"
               required
             />
           </div>
@@ -54,7 +54,7 @@ import { User } from '../../../core/models/campus.models';
 
         <hr class="my-4 text-muted" />
 
-        <div class="small fw-semibold text-secondary mb-2 text-center">Quick Hackathon Demo Logins:</div>
+        <div class="small fw-semibold text-secondary mb-2 text-center">Demo Credentials:</div>
         <div class="d-grid gap-2">
           <button
             type="button"
