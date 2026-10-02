@@ -1,4 +1,12 @@
-export type UserRole = 'STUDENT' | 'ADMIN';
+export type UserRole = 'STUDENT' | 'ADMIN' | 'STAFF';
+
+export interface Staff {
+  staffId: string;
+  name: string;
+  category: 'Plumbing' | 'Electrical' | 'Cleaning' | 'Carpentry' | 'Hostel' | 'Security';
+  department: string;
+  phone?: string;
+}
 
 export interface User {
   id: string;
@@ -7,6 +15,7 @@ export interface User {
   name: string;
   role: UserRole;
   studentDetails?: Student;
+  staffDetails?: Staff;
 }
 
 export interface Student {
@@ -16,6 +25,32 @@ export interface Student {
   year: string;
   hostel: string;
   room: string;
+}
+
+export interface Complaint {
+  id: string;
+  studentId: string;
+  studentName: string;
+  title?: string;
+  category: 'Plumbing' | 'Electrical' | 'Cleaning' | 'Wi-Fi' | 'Furniture' | 'Carpentry' | 'Hostel' | 'Security' | 'Other';
+  location: string;
+  room: string;
+  description: string;
+  priority: 'Low' | 'Medium' | 'High';
+  assignedStaff?: string; // Kept for backward compatibility
+  assignedStaffId?: string;
+  assignedStaffName?: string;
+  status: 'Pending' | 'Assigned' | 'Accepted' | 'In Progress' | 'Resolved' | 'Closed' | 'Reopened';
+  createdAt: string;
+  assignedAt?: string;
+  acceptedAt?: string;
+  startedAt?: string;
+  resolvedAt?: string;
+  closedAt?: string;
+  rejectionReason?: string;
+  resolutionNote?: string;
+  reopenReason?: string;
+  adminNote?: string;
 }
 
 export interface AttendanceRecord {
@@ -72,21 +107,6 @@ export interface CertificateRequest {
   purpose: string;
   status: 'Requested' | 'Approved' | 'Generated' | 'Rejected';
   createdAt: string;
-}
-
-export interface Complaint {
-  id: string;
-  studentId: string;
-  studentName: string;
-  category: 'Plumbing' | 'Electrical' | 'Cleaning' | 'Wi-Fi' | 'Furniture' | 'Other';
-  location: string;
-  room: string;
-  description: string;
-  priority: 'Low' | 'Medium' | 'High';
-  assignedStaff?: string;
-  status: 'Pending' | 'Assigned' | 'In Progress' | 'Resolved' | 'Closed' | 'Reopened';
-  createdAt: string;
-  adminNote?: string;
 }
 
 export interface Notice {

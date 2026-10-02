@@ -15,7 +15,13 @@ export const authGuard: CanActivateFn = (route, state) => {
 
   const expectedRole = route.data?.['role'];
   if (expectedRole && currentUser.role !== expectedRole) {
-    router.navigate([currentUser.role === 'ADMIN' ? '/admin/dashboard' : '/student/dashboard']);
+    if (currentUser.role === 'ADMIN') {
+      router.navigate(['/admin/dashboard']);
+    } else if (currentUser.role === 'STAFF') {
+      router.navigate(['/staff/dashboard']);
+    } else {
+      router.navigate(['/student/dashboard']);
+    }
     return false;
   }
 
