@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { authGuard } from './core/guards/auth.guard-guard';
 import { MainLayoutComponent } from './layout/main-layout/main-layout';
+import { StaffLayoutComponent } from './layout/staff-layout/staff-layout';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -25,6 +26,20 @@ export const routes: Routes = [
       { path: 'fees', loadComponent: () => import('./features/student/fees/fees').then(m => m.StudentFeesComponent) },
       { path: 'notices', loadComponent: () => import('./features/student/notices/notices').then(m => m.StudentNoticesComponent) },
       { path: 'notifications', loadComponent: () => import('./features/student/notifications/notifications').then(m => m.StudentNotificationsComponent) },
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
+    ]
+  },
+  {
+    path: 'staff',
+    component: StaffLayoutComponent,
+    canActivate: [authGuard],
+    data: { role: 'STAFF' },
+    children: [
+      { path: 'dashboard', loadComponent: () => import('./features/staff/dashboard/dashboard').then(m => m.StaffDashboardComponent) },
+      { path: 'complaints', loadComponent: () => import('./features/staff/complaints-list/complaints-list').then(m => m.StaffComplaintsListComponent) },
+      { path: 'complaints/:id', loadComponent: () => import('./features/staff/complaint-detail/complaint-detail').then(m => m.StaffComplaintDetailComponent) },
+      { path: 'notifications', loadComponent: () => import('./features/staff/notifications/notifications').then(m => m.StaffNotificationsComponent) },
+      { path: 'profile', loadComponent: () => import('./features/staff/profile/profile').then(m => m.StaffProfileComponent) },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
     ]
   },

@@ -11,10 +11,10 @@ import { User } from '../../../core/models/campus.models';
   imports: [CommonModule, FormsModule],
   template: `
     <div class="d-flex align-items-center justify-content-center min-vh-100 bg-light px-3">
-      <div class="card shadow-sm border-0 p-4" style="max-width: 420px; width: 100%;">
+      <div class="card shadow-sm border-0 p-4" style="max-width: 440px; width: 100%;">
         <div class="text-center mb-4">
           <i class="bi bi-mortarboard-fill text-primary" style="font-size: 2.75rem;"></i>
-          <h3 class="fw-bold text-dark mt-2 mb-0">Core Campus</h3>
+          <h3 class="fw-bold text-dark mt-2 mb-0">CoreCampus</h3>
           <p class="text-muted small">One Campus, One Digital Workflow</p>
         </div>
 
@@ -30,7 +30,7 @@ import { User } from '../../../core/models/campus.models';
               class="form-control"
               [(ngModel)]="email"
               name="email"
-              placeholder="e.g. student@gmail.com"
+              placeholder="e.g. plumber@corecampus.demo"
               required
             />
           </div>
@@ -54,23 +54,46 @@ import { User } from '../../../core/models/campus.models';
 
         <hr class="my-4 text-muted" />
 
-        <div class="small fw-semibold text-secondary mb-2 text-center">Demo Credentials:</div>
+        <div class="small fw-semibold text-secondary mb-2 text-center">Quick Demo Logins:</div>
         <div class="d-grid gap-2">
+          <!-- Student Login -->
           <button
             type="button"
             class="btn btn-outline-primary btn-sm text-start d-flex justify-content-between align-items-center"
             (click)="quickFill('student')"
           >
             <span><strong>Student:</strong> Dinakrushna (MCA)</span>
-            <i class="bi bi-arrow-right"></i>
+            <span class="badge bg-primary">STU001</span>
           </button>
+
+          <!-- Admin Login -->
           <button
             type="button"
             class="btn btn-outline-dark btn-sm text-start d-flex justify-content-between align-items-center"
             (click)="quickFill('admin')"
           >
             <span><strong>Admin:</strong> Campus Administrator</span>
-            <i class="bi bi-arrow-right"></i>
+            <span class="badge bg-dark">ADM001</span>
+          </button>
+
+          <!-- Staff - Plumbing -->
+          <button
+            type="button"
+            class="btn btn-outline-success btn-sm text-start d-flex justify-content-between align-items-center"
+            (click)="quickFill('plumber')"
+          >
+            <span><strong>Staff:</strong> Plumbing Team</span>
+            <span class="badge bg-success">STF001</span>
+          </button>
+
+          <!-- Staff - Electrical -->
+          <button
+            type="button"
+            class="btn btn-outline-warning text-dark btn-sm text-start d-flex justify-content-between align-items-center"
+            (click)="quickFill('electrician')"
+          >
+            <span><strong>Staff:</strong> Electrical Team</span>
+            <span class="badge bg-warning text-dark">STF002</span>
           </button>
         </div>
       </div>
@@ -84,13 +107,19 @@ export class LoginComponent {
 
   constructor(private storage: StorageService, private router: Router) {}
 
-  quickFill(role: 'student' | 'admin'): void {
+  quickFill(role: 'student' | 'admin' | 'plumber' | 'electrician'): void {
     if (role === 'student') {
-      this.email = 'student@campusone.demo';
+      this.email = 'student@corecampus.demo';
       this.password = 'student123';
-    } else {
-      this.email = 'admin@campusone.demo';
+    } else if (role === 'admin') {
+      this.email = 'admin@corecampus.demo';
       this.password = 'admin123';
+    } else if (role === 'plumber') {
+      this.email = 'plumber@corecampus.demo';
+      this.password = 'plumber123';
+    } else if (role === 'electrician') {
+      this.email = 'electrician@corecampus.demo';
+      this.password = 'electrician123';
     }
     this.login();
   }
@@ -98,7 +127,12 @@ export class LoginComponent {
   login(): void {
     this.errorMessage = '';
     const users = this.storage.get<User[]>('USERS') || [];
-    const matched = users.find(u => u.email === this.email && u.password === this.password);
+    
+    // Check against email and password (supports both corecampus.demo and campusone.demo)
+    const matched = users.find(u => 
+      u.email.toLowerCase() === this.email.trim().toLowerCase() && 
+      u.password === this.password
+    );
 
     if (!matched) {
       this.errorMessage = 'Invalid email or password.';
@@ -107,8 +141,11 @@ export class LoginComponent {
 
     this.storage.set('CURRENT_USER', matched);
 
+    // Route to correct module based on role
     if (matched.role === 'ADMIN') {
       this.router.navigate(['/admin/dashboard']);
+    } else if (matched.role === 'STAFF') {
+      this.router.navigate(['/staff/dashboard']);
     } else {
       this.router.navigate(['/student/dashboard']);
     }
