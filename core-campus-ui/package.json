@@ -22,8 +22,5 @@
     "@angular/cli": "22.2.0",
     "@angular/compiler-cli": "22.2.0",
     "typescript": "~6.0.0"
-  },
-  "outputPath": {
-  "base": "dist/core-campus-ui"
-}
+  }
 }

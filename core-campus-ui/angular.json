@@ -2,7 +2,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "core-campus-angular": {
+    "core-campus-ui": {
       "projectType": "application",
       "root": "",
       "sourceRoot": "src",
@@ -28,11 +28,11 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "development": {
-              "buildTarget": "core-campus-angular:build"
+              "buildTarget": "core-campus-ui:build"
             }
           },
           "options": {
-            "buildTarget": "core-campus-angular:build"
+            "buildTarget": "core-campus-ui:build"
           },
           "defaultConfiguration": "development"
         }
