@@ -1,5 +1,5 @@
 /* ==========================================================================
-   SmartCampus Portal · js/faculty.js
+   CoreCampus Portal · js/faculty.js
    Faculty-only pieces: navigation config and the faculty dashboard page.
    ========================================================================== */
 (function () {

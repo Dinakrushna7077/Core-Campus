@@ -1,5 +1,5 @@
 /* ==========================================================================
-   SmartCampus Portal · js/auth.js
+   CoreCampus Portal · js/auth.js
   Session handling shared by Login.html and the three dashboards.
    Sessions are demo-only: a signed-in user's id is kept in localStorage.
    ========================================================================== */

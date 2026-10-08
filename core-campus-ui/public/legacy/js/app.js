@@ -1,5 +1,5 @@
 /* ==========================================================================
-   SmartCampus Portal · js/app.js
+   CoreCampus Portal · js/app.js
    --------------------------------------------------------------------------
    Core framework shared by every page. Sections:
      1. Utilities and safe HTML templating
@@ -907,7 +907,7 @@
           </div>
         </header>
         <main id="view" class="content" tabindex="-1"></main>
-        <footer class="app-foot">SmartCampus Institute of Technology. A frontend-only prototype: every record shown is sample data.</footer>
+        <footer class="app-foot">CoreCampus Institute of Technology. A frontend-only prototype: every record shown is sample data.</footer>
       </div>
     </div>`;
   }
@@ -943,7 +943,7 @@
     let page = cfg.pages[id];
     if (!page) { id = 'dashboard'; page = cfg.pages.dashboard; }
     Shell.pageId = id;
-    document.title = `${page.title} | SmartCampus`;
+    document.title = `${page.title} | CoreCampus`;
     const view = document.getElementById('view');
     try {
       view.innerHTML = page.render();

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   SmartCampus Portal · js/admin.js
+   CoreCampus Portal · js/admin.js
    Administration-only pieces: navigation config and the admin dashboard page.
    ========================================================================== */
 (function () {

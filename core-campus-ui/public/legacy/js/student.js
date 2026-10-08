@@ -1,5 +1,5 @@
 /* ==========================================================================
-   SmartCampus Portal · js/student.js
+   CoreCampus Portal · js/student.js
    Student-only pieces: navigation config and the student dashboard page.
    Shared pages (timetable, attendance, assignments, events, library,
    announcements, help desk, profile) live in app.js.

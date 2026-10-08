@@ -1,5 +1,5 @@
 /* ==========================================================================
-   SmartCampus Portal · js/hostelpass.js
+   CoreCampus Portal · js/hostelpass.js
    Hostel get pass (out-pass) for hostellers.
    Student: apply -> warden approves -> digital pass with code + barcode.
    Admin / warden / security: approve, gate desk (check out / check in by
