@@ -2,6 +2,8 @@
 
 ### Smarter Campus | Connected Community | Better Tomorrow
 
+🌐 **Live Demo:** [core-campus.netlify.app](https://core-campus.netlify.app/)
+
 > **How Technology Simplifies Everyday Campus Life?**
 
 CoreCampus is a **frontend-only campus management portal prototype** designed to simplify everyday campus activities by bringing important student, faculty, and administrator services into one unified platform.
