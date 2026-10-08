@@ -2,7 +2,7 @@
 
 ### Smarter Campus | Connected Community | Better Tomorrow
 
-🌐 **Live Demo:** [core-campus.netlify.app](https://core-campus.netlify.app/)
+🌐 **Live Demo:** [core-campus.app](https://core-campus.netlify.app/)
 
 > **How Technology Simplifies Everyday Campus Life?**
 
