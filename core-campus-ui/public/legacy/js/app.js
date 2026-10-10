@@ -1944,7 +1944,7 @@
      COMPLAINTS AND SERVICE REQUESTS (help desk)
      ----------------------------------------------------------------------- */
   const CMP_CATS = ['Hostel', 'Mess and Canteen', 'IT and Wi-Fi', 'Infrastructure', 'Transport', 'Documents', 'Accounts and Fees', 'Other'];
-  const ASSIGNEES = ['Unassigned', 'IT Services', 'Maintenance Cell', 'Hostel Warden', 'Academic Section', 'Accounts Office', 'Transport Office', 'Mess Committee'];
+  const ASSIGNEES = ['Unassigned', 'IT Services', 'Maintenance Cell', 'Hostel Warden', 'Academic Section', 'Accounts Office', 'Transport Office', 'Mess Committee','Electrician', 'Plumber', 'Carpenter', 'Other'];
 
   function ticketForm() {
     UI.form({

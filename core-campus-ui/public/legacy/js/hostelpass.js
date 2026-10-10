@@ -1,11 +1,4 @@
-/* ==========================================================================
-   CoreCampus Portal · js/hostelpass.js
-   Hostel get pass (out-pass) for hostellers.
-   Student: apply -> warden approves -> digital pass with code + barcode.
-   Admin / warden / security: approve, gate desk (check out / check in by
-   pass code), overdue tracking, late-return flags, CSV export.
-   Loaded after app.js + auth.js on student.html and admin.html.
-   ========================================================================== */
+
 (function () {
   'use strict';
   const SC = window.SC, { util: U, ui: UI, data: Dt, store: S, pages: P, notify: Notify, shell: Shell } = SC;
